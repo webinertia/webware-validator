@@ -1,11 +1,11 @@
 {
-    "name": "webware/skeleton",
-    "description": "Greenfield starter for Webware packages: shared tooling config, the organization's required CI workflow contract, and a containerized dev environment.",
+    "name": "webware/webware-validator",
+    "description": "Configurable validators for the Webware component stack.",
     "license": "BSD-3-Clause",
     "keywords": [
         "webware",
         "mezzio",
-        "skeleton"
+        "validator"
     ],
     "authors": [
         {
@@ -16,7 +16,7 @@
     ],
     "extra": {
         "laminas": {
-            "config-provider": "Webware\\Skeleton\\ConfigProvider"
+            "config-provider": "Webware\\Validator\\ConfigProvider"
         }
     },
     "require": {
@@ -29,17 +29,17 @@
         "phpunit/phpunit": "^13.3",
         "roave/backward-compatibility-check": "^8.21.0",
         "roave/security-advisories": "dev-master",
-        "webware/webware-tools": "^1.0.0-beta.3"
+        "webware/webware-tools": "^1.0.0-beta.8"
     },
     "autoload": {
         "psr-4": {
-            "Webware\\Skeleton\\": "src/"
+            "Webware\\Validator\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "WebwareTest\\Skeleton\\": "test/unit/",
-            "WebwareTestIntegration\\Skeleton\\": "test/integration/"
+            "WebwareTest\\Validator\\": "test/unit/",
+            "WebwareTestIntegration\\Validator\\": "test/integration/"
         }
     },
     "minimum-stability": "dev",
