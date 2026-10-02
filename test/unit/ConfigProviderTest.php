@@ -19,6 +19,8 @@ use PHPUnit\Framework\Attributes\CoversMethod;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Webware\Validator\ConfigProvider;
+use Webware\Validator\Container\PasswordRequirementFactory;
+use Webware\Validator\PasswordRequirement;
 
 #[CoversClass(ConfigProvider::class)]
 #[CoversMethod(ConfigProvider::class, '__invoke')]
@@ -36,11 +38,23 @@ final class ConfigProviderTest extends TestCase
     }
 
     #[Test]
-    public function providesAnEmptyDependencyFactoryMap(): void
+    public function providesThePasswordRequirementWiringAndThePackageDefaults(): void
     {
         $expected = [
-            'dependencies' => [
+            'dependencies'             => [
                 'factories' => [],
+            ],
+            'validators'               => [
+                'factories' => [
+                    PasswordRequirement::class => PasswordRequirementFactory::class,
+                ],
+            ],
+            PasswordRequirement::class => [
+                'length'  => 8,
+                'upper'   => 1,
+                'lower'   => 1,
+                'digit'   => 1,
+                'special' => 1,
             ],
         ];
 

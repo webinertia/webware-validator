@@ -14,6 +14,8 @@ declare(strict_types=1);
 
 namespace Webware\Validator;
 
+use Webware\Validator\Container\PasswordRequirementFactory;
+
 /**
  * Wiring entry point for the package.
  *
@@ -36,7 +38,19 @@ final class ConfigProvider
     public function __invoke(): array
     {
         return [
-            'dependencies' => $this->getDependencies(),
+            'dependencies'             => $this->getDependencies(),
+            'validators'               => [
+                'factories' => [
+                    PasswordRequirement::class => PasswordRequirementFactory::class,
+                ],
+            ],
+            PasswordRequirement::class => [
+                'length'  => 8,
+                'upper'   => 1,
+                'lower'   => 1,
+                'digit'   => 1,
+                'special' => 1,
+            ],
         ];
     }
 }
