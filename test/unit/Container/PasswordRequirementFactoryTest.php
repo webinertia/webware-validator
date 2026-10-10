@@ -33,7 +33,7 @@ final class PasswordRequirementFactoryTest extends TestCase
         $container->method('has')
             ->willReturn(false);
 
-        $validator = (new PasswordRequirementFactory())(
+        $validator = new PasswordRequirementFactory()(
             container    : $container,
             requestedName: PasswordRequirement::class,
         );
@@ -50,7 +50,7 @@ final class PasswordRequirementFactoryTest extends TestCase
         $container->method('get')
             ->willReturn([PasswordRequirement::class => ['length' => 4]]);
 
-        $validator = (new PasswordRequirementFactory())(
+        $validator = new PasswordRequirementFactory()(
             container    : $container,
             requestedName: PasswordRequirement::class,
         );
@@ -68,7 +68,7 @@ final class PasswordRequirementFactoryTest extends TestCase
         $container->method('get')
             ->willReturn([PasswordRequirement::class => ['length' => 8]]);
 
-        $validator = (new PasswordRequirementFactory())(
+        $validator = new PasswordRequirementFactory()(
             container    : $container,
             requestedName: PasswordRequirement::class,
             options      : ['length' => 4],
@@ -85,7 +85,7 @@ final class PasswordRequirementFactoryTest extends TestCase
         $container->method('has')
             ->willReturn(false);
 
-        $validator = (new PasswordRequirementFactory())(
+        $validator = new PasswordRequirementFactory()(
             container    : $container,
             requestedName: PasswordRequirement::class,
             options      : ['length' => 4],
