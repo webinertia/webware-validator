@@ -3,7 +3,7 @@
 [![PHP Version](https://img.shields.io/packagist/php-v/webware/webware-validator)](https://packagist.org/packages/webware/webware-validator)
 [![Latest Version](https://img.shields.io/packagist/v/webware/webware-validator)](https://packagist.org/packages/webware/webware-validator)
 [![License](https://img.shields.io/github/license/webinertia/webware-validator)](LICENSE)
-[![Required CI](https://github.com/webinertia/webware-validator/actions/workflows/required/webinertia/.github/.github/workflows/continuous-integration.yml/badge.svg)](https://github.com/webinertia/webware-validator/actions/workflows/required/webinertia/.github/.github/workflows/continuous-integration.yml)
+[![Continuous Integration](https://github.com/webinertia/webware-validator/actions/workflows/required/webinertia/.github/.github/workflows/continuous-integration.yml/badge.svg)](https://github.com/webinertia/webware-validator/actions/workflows/required/webinertia/.github/.github/workflows/continuous-integration.yml)
 [![codecov](https://codecov.io/gh/webinertia/webware-validator/graph/badge.svg)](https://codecov.io/gh/webinertia/webware-validator)
 [![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fwebinertia%2Fwebware-validator%2F1.0.x)](https://dashboard.stryker-mutator.io/reports/github.com/webinertia/webware-validator/1.0.x)
 
