@@ -30,8 +30,7 @@ final class PasswordRequirementFactoryTest extends TestCase
     public function buildsADefaultValidatorWhenNothingIsConfigured(): void
     {
         $container = $this->createStub(ContainerInterface::class);
-        $container->method('has')
-            ->willReturn(false);
+        $container->method('has')->willReturn(false);
 
         $validator = new PasswordRequirementFactory()(
             container    : $container,
@@ -45,10 +44,8 @@ final class PasswordRequirementFactoryTest extends TestCase
     public function buildsAValidatorFromTheConfiguredDefaults(): void
     {
         $container = $this->createStub(ContainerInterface::class);
-        $container->method('has')
-            ->willReturn(true);
-        $container->method('get')
-            ->willReturn([PasswordRequirement::class => ['length' => 4]]);
+        $container->method('has')->willReturn(true);
+        $container->method('get')->willReturn([PasswordRequirement::class => ['length' => 4]]);
 
         $validator = new PasswordRequirementFactory()(
             container    : $container,
@@ -63,10 +60,8 @@ final class PasswordRequirementFactoryTest extends TestCase
     public function letsCallSiteOptionsOverrideTheConfiguredDefaults(): void
     {
         $container = $this->createStub(ContainerInterface::class);
-        $container->method('has')
-            ->willReturn(true);
-        $container->method('get')
-            ->willReturn([PasswordRequirement::class => ['length' => 8]]);
+        $container->method('has')->willReturn(true);
+        $container->method('get')->willReturn([PasswordRequirement::class => ['length' => 8]]);
 
         $validator = new PasswordRequirementFactory()(
             container    : $container,
@@ -82,8 +77,7 @@ final class PasswordRequirementFactoryTest extends TestCase
     public function usesCallSiteOptionsWhenNoConfigServiceIsRegistered(): void
     {
         $container = $this->createStub(ContainerInterface::class);
-        $container->method('has')
-            ->willReturn(false);
+        $container->method('has')->willReturn(false);
 
         $validator = new PasswordRequirementFactory()(
             container    : $container,
